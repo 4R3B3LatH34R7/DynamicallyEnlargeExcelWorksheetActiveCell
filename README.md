@@ -1,4 +1,4 @@
-# Enlarging an Excel Worksheet's ActiveCell
+# Dynamically Enlarging an Excel Worksheet's ActiveCell
 
 A few days ago, I came across a question in a facebook group where Myanmar people share, learn and discuss MS Excel related information.\
 The question is about making the ActiveCell in the worksheet bigger/larger/zoomed-in.\
