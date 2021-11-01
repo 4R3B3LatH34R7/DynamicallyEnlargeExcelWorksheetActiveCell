@@ -67,3 +67,8 @@ Private Sub Workbook_SheetSelectionChange(ByVal Sh As Object, ByVal Target As Ra
 '    End If
 End Sub
 ```
+In both methods, I decided to use the Workbook_SheetSelectionChange Event because I don't want to be worried about the code not working in the newly inserted Worksheets.
+As mentioned in the code, it is possible to limit this feature to be available in certain Worksheets by modifying a little bit where the Worksheet name can be checked.
+
+There is no guarantee that the userform based method will be further developed as I am currently occupied with other projects.
+If it becomes satisfactorily functional and clean enough, I will release it.
