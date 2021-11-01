@@ -21,6 +21,49 @@ I could immediately think of 4 methods that I may be able to use to achieve that
 3. Play with the Worksheet's Zoom %. (not really)
 4. Place a textbox on a modeless userform and put the activecell's contents into it. (I love it)
 
-Among those 4, method1 is most likely what the OP wanted. But I believe that it would be quite disturbing to the user's eyes.
-And the only other worthy contender, IMHO, is the method4 as it seems more elegant and less distracting to the user.
-The remaining 2, I don't even bother to try.
+Among those 4, method1 is most likely what the OP wanted. But I believe that it would be quite disturbing to the user's eyes.\
+And the only other worthy contender, IMHO, is the method4 as it seems more elegant and less distracting to the user.\
+The remaining 2, I did't even bother to try.
+
+## The VBA Code
+It seems like a trivial and minor coding fun for me but actually, I just spent 2 days working on it and I still feel like some parts need to function a bit better, especially the userform method.\
+Therefore, I will just share the method1 code as the userform method still feels like it needs further polish.
+
+```VBA
+'copy paste into ThisWorkbook module
+Option Explicit
+Const defaultColumnWidth = 8.11
+Const defaultRowHeight = 14.4
+Const increasedColumnWidth = 50
+Const increasedRowHeight = 50
+Private saved_ActiveCell_ColumnWidth As Integer
+Private saved_ActiveCell_RowHeight As Integer
+Private saved_ActiveCell As Range
+Private Sub Workbook_SheetSelectionChange(ByVal Sh As Object, ByVal Target As Range)
+'explicit error checking was not done - use at users' own risk
+'very important that sh must be a worksheet
+'    If Sh.Name = "Sheet1" Then 'set sheet name here to limit to Sheet1 only
+    If Target.Cells.CountLarge = 1 Then
+        Application.ScreenUpdating = False
+        If Target.Value <> "" Then
+            If Not saved_ActiveCell Is Nothing Then
+                saved_ActiveCell.EntireColumn.ColumnWidth = saved_ActiveCell_ColumnWidth
+                saved_ActiveCell.EntireRow.RowHeight = saved_ActiveCell_RowHeight
+            End If
+            Set saved_ActiveCell = Target 'Application.ActiveCell.Address
+            saved_ActiveCell_ColumnWidth = Target.ColumnWidth
+            saved_ActiveCell_RowHeight = Target.RowHeight
+
+            Target.EntireRow.RowHeight = increasedRowHeight
+            Target.EntireColumn.ColumnWidth = increasedColumnWidth
+        Else
+            If Not saved_ActiveCell Is Nothing Then
+                saved_ActiveCell.EntireColumn.ColumnWidth = saved_ActiveCell_ColumnWidth
+                saved_ActiveCell.EntireRow.RowHeight = saved_ActiveCell_RowHeight
+            End If
+        End If
+        Application.ScreenUpdating = True
+    End If
+'    End If
+End Sub
+```
