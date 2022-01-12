@@ -72,3 +72,20 @@ As mentioned in the code, it is possible to limit this feature to be available i
 
 There is no guarantee that the userform based method will be further developed as I am currently occupied with other projects.
 If it becomes satisfactorily functional and clean enough, I will release it.
+
+***
+## License
+I don't actually like/want/wish to apply CC BY-SA license to what I share, really!\
+However, there exists some jerks in this world who thought it's ok to derive my work without proper accreditation.\
+I don't care much for fame nor finance but a little credit for the many hours of my limited life I spent on a project is appreciated.\
+Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+
+This work is licensed under a
+[Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
+
+[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
+
+[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
+[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
+[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
+***
